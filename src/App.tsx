@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import './App.css';
-
+import List from './components/List';
 
 interface Ippl {
-  ppl: {
+  people: {
     name: string,
     age: number,
     urlImg: string,
@@ -17,13 +17,14 @@ interface Ippl {
 function App() {
 
 
-  const [people, setPeople] = useState<Ippl['ppl']>([]);
+  const [people, setPeople] = useState<Ippl['people']>([]);
 
   
 
   return (
     <div className="App">
       <h1>This I gotta do</h1>
+      <List people={people}/>
     </div>
   );
 }
