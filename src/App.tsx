@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import { Interface } from 'readline';
 import './App.css';
 
 
