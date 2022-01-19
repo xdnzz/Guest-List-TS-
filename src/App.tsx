@@ -3,7 +3,7 @@ import './App.css';
 import List from './components/List';
 
 interface Ippl {
-  people: {
+  ppl: {
     name: string,
     age: number,
     urlImg: string,
@@ -17,22 +17,32 @@ interface Ippl {
 function App() {
 
 
-  const [people, setPeople] = useState<Ippl['people']>([
+  const [people, setPeople] = useState<Ippl['ppl']>([
     {
-     name:'danilo',
+     name:'Dio Brando',
      age: 25,
-     urlImg: 'https://ovicio.com.br/wp-content/uploads/diobrando.jpg',
-     note:'qpowekqwe',
-     confirmed: true 
-    }
+     urlImg: 'https://www.anime-planet.com/images/characters/19367.jpg?t=1587909581',
+     note:'peanut allergy',
+     confirmed: false 
+    },
+    {
+      name:'Jonathan Joestar',
+      age: 22,
+      urlImg: 'https://pbs.twimg.com/media/E3-DrGtWYAQv9BQ.jpg',
+      confirmed: true 
+     },
   ]);
 
+
+  console.dir(people);
   
 
   return (
     <div className="App">
-      <h1>This I gotta do</h1>
-      <List people={people}/>
+     <div className='thumb'>
+     <h1>JoJo's Birthday's party</h1> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JoJo%27s_Bizarre_Adventure_logo.png/250px-JoJo%27s_Bizarre_Adventure_logo.png"/>
+     </div>
+      <List pessoa={people}/>
     </div>
   );
 }

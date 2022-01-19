@@ -2,7 +2,7 @@ import React from 'react';
 
 
 interface Iprops {
-    people: {
+    pessoa: {
       name: string,
       age: number,
       urlImg: string,
@@ -13,19 +13,23 @@ interface Iprops {
   }
 
 
-const List: React.FC<Iprops> = ({people}) =>{
+const List: React.FC<Iprops> = ({pessoa}) =>{
 
      const renderizarLista = (): JSX.Element[] => {
-         return people.map((person)=>{
+         return pessoa.map((person)=>{
              return (
-                 <li>
-                     <div>
+                 
+                     <>
+                     <div className="ImgName">
                          <img src={person.urlImg}/>
                          <h2>{person.name}</h2>
+                     
+                     <span>{person.age} Years Old</span>
+                     <span>{person.note}</span>
+                     {person.confirmed? 'Confirmed' : 'Pending'}
                      </div>
-                     <p>{person.age} Years Old</p>
-                     <p>{person.note}</p>
-                 </li>
+                     </>
+             
              )
          })
      }
@@ -33,7 +37,7 @@ const List: React.FC<Iprops> = ({people}) =>{
 
     return (
         <div>
-            ik ben een liest
+           
             {renderizarLista()}
         </div>
     )
