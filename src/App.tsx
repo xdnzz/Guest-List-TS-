@@ -17,7 +17,15 @@ interface Ippl {
 function App() {
 
 
-  const [people, setPeople] = useState<Ippl['people']>([]);
+  const [people, setPeople] = useState<Ippl['people']>([
+    {
+     name:'danilo',
+     age: 25,
+     urlImg: 'https://ovicio.com.br/wp-content/uploads/diobrando.jpg',
+     note:'qpowekqwe',
+     confirmed: true 
+    }
+  ]);
 
   
 
