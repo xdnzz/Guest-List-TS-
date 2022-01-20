@@ -42,7 +42,8 @@ function App() {
      <div className='thumb'>
      <h1>JoJo's Birthday's party</h1> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JoJo%27s_Bizarre_Adventure_logo.png/250px-JoJo%27s_Bizarre_Adventure_logo.png"/>
      </div>
-      <List pessoa={people}/>
+      <List dataInvitedPpl={people}/> 
+      {/* pessoa é o nome da interface */}
     </div>
   );
 }

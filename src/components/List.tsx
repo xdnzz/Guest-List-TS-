@@ -2,7 +2,7 @@ import React from 'react';
 
 
 interface Iprops {
-    pessoa: {
+    dataInvitedPpl: {
       name: string,
       age: number,
       urlImg: string,
@@ -13,10 +13,10 @@ interface Iprops {
   }
 
 
-const List: React.FC<Iprops> = ({pessoa}) =>{
+const List: React.FC<Iprops> = ({dataInvitedPpl}) =>{
 
      const renderizarLista = (): JSX.Element[] => {
-         return pessoa.map((person)=>{
+         return dataInvitedPpl.map((person)=>{
              return (
                  
                      <>
