@@ -1,0 +1,14 @@
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.conteudo input {
+    margin-bottom: 10px;
+}
+
+.conteudo textarea {
+    height: 60px;
+    resize: none;
+}
