@@ -58,7 +58,7 @@ interface IData{
             />
              <input
                 type="text"
-                placeholder="URL"
+                placeholder="Foto do convidado(url)"
                 value={data.url}
                 onChange={handChange}
                 name="url"
@@ -73,6 +73,7 @@ interface IData{
 
             <button
             onClick={handleClick}
+            className="botao"
             >
                 Adicionar convidado
             </button>

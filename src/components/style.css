@@ -13,3 +13,18 @@
     resize: none;
     margin-bottom: 10px;
 }
+
+.botao {
+    background: rgb(212, 122, 164);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 0;
+
+
+}
+
+input, textarea {
+    border-radius: 5px;
+    border: 1px solid grey;
+}

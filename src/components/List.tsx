@@ -12,28 +12,31 @@ interface Iprops {
     }[]
   }
 
+ 
+
 
 const List: React.FC<Iprops> = ({dataInvitedPpl}) =>{
-
      const renderizarLista = (): JSX.Element[] => {
          return dataInvitedPpl.map((person)=>{
              return (
                  
                      <>
                      <div className="ImgName">
-                         <img alt="imagem convidado" src={person.url}/>
-                         <h2>{person.name}</h2>
+                        <div className="divisor">
+                            <img alt="imagem convidado" src={person.url}/>
+                            <h2>{person.name}</h2>
+                            <span>{person.age} anos</span>
+                        </div>
                      
-                     <span>{person.age} Years Old</span>
-                     <span>{person.note}</span>
-                     {person.confirmed? 'Confirmed' : 'Pending'}
+                   
+                     {person.note === "" ? 'Sem observações':'OBS:'} <span>{person.note}</span>
+               
                      </div>
                      </>
              
              )
          })
      }
-
 
     return (
         <div>

@@ -19,13 +19,7 @@ function App() {
 
 
   const [people, setPeople] = useState<Ippl['ppl']>([
-    {
-     name:'Dio Brando',
-     age: 25,
-     url: 'https://www.anime-planet.com/images/characters/19367.jpg?t=1587909581',
-     note:'peanut allergy',
-     confirmed: false 
-    }
+   
 
   ]);
 

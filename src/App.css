@@ -29,16 +29,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 300px;
+  width: 400px;
   border: 1px solid rgb(105, 95, 95);
   border-radius:5px;
   margin: 10px;
   padding: 10px;
 }
 
+.divisor {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
 .ImgName img {
-  width: 200px;
-  height: 200px;
+  width: 70px;
+  height: 70px;
   border-radius: 100px;
 
 }
