@@ -5,9 +5,9 @@ interface Iprops {
     dataInvitedPpl: {
       name: string,
       age: number,
-      urlImg: string,
+      url: string,
       note?: string,
-      confirmed: boolean
+      confirmed?: boolean
   
     }[]
   }
@@ -21,7 +21,7 @@ const List: React.FC<Iprops> = ({dataInvitedPpl}) =>{
                  
                      <>
                      <div className="ImgName">
-                         <img src={person.urlImg}/>
+                         <img alt="imagem convidado" src={person.url}/>
                          <h2>{person.name}</h2>
                      
                      <span>{person.age} Years Old</span>

@@ -1,36 +1,85 @@
-import react, { useState } from 'react';
+import React, { useState } from "react";
 import './style.css';
+import { Ippl as Datas } from "../App";
 
-const AddContent = () =>{
+interface IData{
+    people: Datas["ppl"],
+    setPeople: React.Dispatch<React.SetStateAction<Datas["ppl"]>>
+}
 
-    const [input, setInput] = useState({
-        name:'',
-        age:'',
-        img:'',
-        note:''
+    const AddToList:React.FC<IData> = ({people, setPeople}) => {
+
+    const [data, setData] = useState({
+        name: "",
+        age: "",
+        note: "",
+        url: ""
     })
 
-    return(
-        <div className='conteudo'>
-            <input type="text"
-            placeholder="Nome do convidado(a)"
-            value={input.name}
+
+    const handChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>):void =>{
+        setData({
+            ...data,
+            [e.target.name]: e.target.value
+        })
+    }
+
+
+    const handleClick = ():void => {
+        if( !data.name || !data.age ||  !data.url){
+            return
+        }
+        setPeople([
+            ...people, {
+                name: data.name,
+                age: parseInt(data.age),
+                url: data.url,
+                note: data.note
+            }
+        ])
+  
+    }
+
+    return (
+        <div className="conteudo">
+            <input
+                type="text"
+                placeholder="Nome"
+                value={data.name}
+                onChange={handChange}
+                name="name"
             />
-            <input type="text"
-            placeholder="Idade"
-            value={input.age}
+             <input
+                type="text"
+                placeholder="Idade"
+                value={data.age}
+                onChange={handChange}
+                name="age"
             />
-            <input type="text"
-            placeholder="Url da foto"
-            value={input.img}
+             <input
+                type="text"
+                placeholder="URL"
+                value={data.url}
+                onChange={handChange}
+                name="url"
             />
-            <textarea
-            placeholder="Observações"
-            value={input.note}
+             <textarea
+                placeholder="Observação"
+                value={data.note}
+                onChange={handChange}
+                name="note"
+                
             />
+
+            <button
+            onClick={handleClick}
+            >
+                Adicionar convidado
+            </button>
+            
+
         </div>
     )
 }
 
-
-export default AddContent;
+export default AddToList;
